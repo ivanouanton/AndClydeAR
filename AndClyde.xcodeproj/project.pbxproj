@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,17 +13,20 @@
 		3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516C2656D7F200A9A67D /* Main.storyboard */; };
 		3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516F2656D7F500A9A67D /* Assets.xcassets */; };
 		3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */; };
+		3AD2517B2656DB0D00A9A67D /* LaserRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2517A2656DB0D00A9A67D /* LaserRed.reality */; };
+		3AD2517E2656E3E400A9A67D /* MultipeerSession in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD2517D2656E3E400A9A67D /* MultipeerSession */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		3AD2516A2656D7F200A9A67D /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		3AD2516D2656D7F200A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AD2516F2656D7F500A9A67D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD251722656D7F500A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD251742656D7F500A9A67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AD2517A2656DB0D00A9A67D /* LaserRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaserRed.reality; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD2517E2656E3E400A9A67D /* MultipeerSession in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		3AD251652656D7F200A9A67D /* AndClyde */ = {
 			isa = PBXGroup;
 			children = (
+				3AD2517A2656DB0D00A9A67D /* LaserRed.reality */,
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
 				3AD251682656D7F200A9A67D /* ViewController.swift */,
 				3AD2516A2656D7F200A9A67D /* Experience.rcproject */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = AndClyde;
+			packageProductDependencies = (
+				3AD2517D2656E3E400A9A67D /* MultipeerSession */,
+			);
 			productName = AndClyde;
 			productReference = 3AD251632656D7F200A9A67D /* AndClyde.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +118,9 @@
 				Base,
 			);
 			mainGroup = 3AD2515A2656D7F200A9A67D;
+			packageReferences = (
+				3AD2517C2656E3E400A9A67D /* XCRemoteSwiftPackageReference "multipeer-session" */,
+			);
 			productRefGroup = 3AD251642656D7F200A9A67D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +137,7 @@
 			files = (
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
+				3AD2517B2656DB0D00A9A67D /* LaserRed.reality in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,15 +298,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVMQ9FHDFX;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A42TUUCYD6;
 				INFOPLIST_FILE = AndClyde/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andclydeCo.AndClyde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanou.andclydeCo.AndClyde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "DEV Ivanou";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,15 +320,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVMQ9FHDFX;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A42TUUCYD6;
 				INFOPLIST_FILE = AndClyde/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andclydeCo.AndClyde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanou.andclydeCo.AndClyde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "DEV Ivanou";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -341,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AD2517C2656E3E400A9A67D /* XCRemoteSwiftPackageReference "multipeer-session" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AddedLayer/multipeer-session.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AD2517D2656E3E400A9A67D /* MultipeerSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AD2517C2656E3E400A9A67D /* XCRemoteSwiftPackageReference "multipeer-session" */;
+			productName = MultipeerSession;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3AD2515B2656D7F200A9A67D /* Project object */;
 }
