@@ -30,9 +30,18 @@ class ViewController: UIViewController {
         return button
     }()
     
+    private lazy var logoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "&Clyde"
+        label.textColor = UIColor(named: "black")
+        label.font = UIFont(name: "Berlindah", size: 50)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     lazy var connectionStatusView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 4
         view.layer.backgroundColor = UIColor.systemRed.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -121,6 +130,7 @@ class ViewController: UIViewController {
         arView.addSubview(addModelButton)
         arView.addSubview(connectionStatusView)
         arView.addSubview(modelPlaceControlStack)
+        arView.addSubview(logoLabel)
         
         NSLayoutConstraint.activate([
             addModelButton.heightAnchor.constraint(equalToConstant: 50),
@@ -131,9 +141,12 @@ class ViewController: UIViewController {
             modelPlaceControlStack.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             modelPlaceControlStack.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -24),
             
-            connectionStatusView.heightAnchor.constraint(equalToConstant: 10),
-            connectionStatusView.widthAnchor.constraint(equalToConstant: 10),
-            connectionStatusView.topAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.topAnchor, constant: 16),
+            logoLabel.topAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.topAnchor, constant: 8),
+            logoLabel.leadingAnchor.constraint(equalTo: arView.leadingAnchor, constant: 24),
+
+            connectionStatusView.heightAnchor.constraint(equalToConstant: 8),
+            connectionStatusView.widthAnchor.constraint(equalToConstant: 8),
+            connectionStatusView.centerYAnchor.constraint(equalTo: logoLabel.centerYAnchor),
             connectionStatusView.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -24),
         ])
     }
