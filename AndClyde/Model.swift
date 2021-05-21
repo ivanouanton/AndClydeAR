@@ -31,20 +31,6 @@ class Model {
         } else {
             print("Unable to load modelEntity for \(filename).")
         }
-        
-//        _ = ModelEntity.loadModelAsync(named: filename)
-//            .sink(receiveCompletion: { loadCompletion in
-//                switch loadCompletion {
-//                case .failure(let error):
-//                case .finished:
-//                    break
-//                }
-//            }, receiveValue: { modelEntity in
-//                self.modelEntity = modelEntity
-//                self.modelEntity?.scale *= self.scaleCompensation
-//
-//                print("modelEntity for \(self.name) has been loaded.")
-//            })
     }
 }
 

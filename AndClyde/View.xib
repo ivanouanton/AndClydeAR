@@ -17,18 +17,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8Eu-yI-bok">
-                    <rect key="frame" x="112" y="792" width="190" height="70"/>
+                    <rect key="frame" x="200" y="792" width="190" height="70"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xx4-gr-rOh">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thi-bB-Z3H">
                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="70" id="609-o9-AhS"/>
-                                <constraint firstAttribute="height" constant="70" id="qKD-kr-jPZ"/>
+                                <constraint firstAttribute="width" constant="70" id="Y3W-03-RNK"/>
+                                <constraint firstAttribute="height" constant="70" id="jDM-w2-Ari"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="53"/>
-                            <color key="tintColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
                             <state key="normal">
-                                <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large"/>
+                                <color key="titleColor" systemColor="systemBlueColor"/>
+                                <color key="titleShadowColor" systemColor="systemBlueColor"/>
+                                <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49" scale="large"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-de-bP1">
@@ -49,10 +51,10 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemPinkColor"/>
+            <color key="backgroundColor" systemColor="systemIndigoColor"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8Eu-yI-bok" secondAttribute="trailing" constant="24" id="cWq-Ea-Nf7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8Eu-yI-bok" secondAttribute="bottom" id="hvf-O6-d8k"/>
-                <constraint firstItem="8Eu-yI-bok" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="lFO-At-CTt"/>
             </constraints>
             <point key="canvasLocation" x="80" y="83"/>
         </view>
@@ -62,8 +64,8 @@
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
