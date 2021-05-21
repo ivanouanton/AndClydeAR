@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A21D2732657DA8E00E11363 /* shell.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2722657DA8E00E11363 /* shell.usdz */; };
+		3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 3A21D2772657F05D00E11363 /* FocusEntity */; };
+		3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2792657F0A300E11363 /* FocusARView.swift */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
 		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
@@ -18,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A21D2722657DA8E00E11363 /* shell.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shell.usdz; sourceTree = "<group>"; };
+		3A21D2792657F0A300E11363 /* FocusARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */,
 				3AD2517E2656E3E400A9A67D /* MultipeerSession in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +66,7 @@
 		3AD251652656D7F200A9A67D /* AndClyde */ = {
 			isa = PBXGroup;
 			children = (
+				3A21D2722657DA8E00E11363 /* shell.usdz */,
 				3AD2517A2656DB0D00A9A67D /* LaserRed.reality */,
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
 				3AD251682656D7F200A9A67D /* ViewController.swift */,
@@ -68,6 +75,7 @@
 				3AD2516F2656D7F500A9A67D /* Assets.xcassets */,
 				3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */,
 				3AD251742656D7F500A9A67D /* Info.plist */,
+				3A21D2792657F0A300E11363 /* FocusARView.swift */,
 			);
 			path = AndClyde;
 			sourceTree = "<group>";
@@ -90,6 +98,7 @@
 			name = AndClyde;
 			packageProductDependencies = (
 				3AD2517D2656E3E400A9A67D /* MultipeerSession */,
+				3A21D2772657F05D00E11363 /* FocusEntity */,
 			);
 			productName = AndClyde;
 			productReference = 3AD251632656D7F200A9A67D /* AndClyde.app */;
@@ -120,6 +129,7 @@
 			mainGroup = 3AD2515A2656D7F200A9A67D;
 			packageReferences = (
 				3AD2517C2656E3E400A9A67D /* XCRemoteSwiftPackageReference "multipeer-session" */,
+				3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 3AD251642656D7F200A9A67D /* Products */;
 			projectDirPath = "";
@@ -135,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A21D2732657DA8E00E11363 /* shell.usdz in Resources */,
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
 				3AD2517B2656DB0D00A9A67D /* LaserRed.reality in Resources */,
@@ -151,6 +162,7 @@
 			files = (
 				3AD251692656D7F200A9A67D /* ViewController.swift in Sources */,
 				3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */,
+				3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */,
 				3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +373,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
 		3AD2517C2656E3E400A9A67D /* XCRemoteSwiftPackageReference "multipeer-session" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AddedLayer/multipeer-session.git";
@@ -372,6 +392,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A21D2772657F05D00E11363 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
 		3AD2517D2656E3E400A9A67D /* MultipeerSession */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3AD2517C2656E3E400A9A67D /* XCRemoteSwiftPackageReference "multipeer-session" */;

@@ -12,7 +12,26 @@ import MultipeerSession
 
 class ViewController: UIViewController {
     
-    @IBOutlet var arView: ARView!
+    @IBOutlet var arView: FocusARView!
+
+    private lazy var addModelButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Add Model", for: .normal)
+        button.layer.cornerRadius = 10
+        button.layer.backgroundColor = UIColor.black.withAlphaComponent(0.25).cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(addModelHandled(sender:)), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var connectionStatusView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 5
+        view.layer.backgroundColor = UIColor.systemRed.cgColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     var multipeerSession: MultipeerSession?
     var sessionIDObservation: NSKeyValueObservation?
@@ -21,6 +40,8 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupARView()
+        
+        setupControlHandler()
         
         setupMultipeerSession()
         
@@ -40,6 +61,23 @@ class ViewController: UIViewController {
         config.isCollaborationEnabled = true
         
         arView.session.run(config)
+    }
+    
+    func setupControlHandler() {
+        arView.addSubview(addModelButton)
+        arView.addSubview(connectionStatusView)
+
+        NSLayoutConstraint.activate([
+            addModelButton.heightAnchor.constraint(equalToConstant: 50),
+            addModelButton.widthAnchor.constraint(equalToConstant: 150),
+            addModelButton.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
+            addModelButton.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -50),
+            
+            connectionStatusView.heightAnchor.constraint(equalToConstant: 10),
+            connectionStatusView.widthAnchor.constraint(equalToConstant: 10),
+            connectionStatusView.topAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.topAnchor, constant: 16),
+            connectionStatusView.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -24),
+        ])
     }
     
     private func setupMultipeerSession() {
@@ -62,9 +100,20 @@ class ViewController: UIViewController {
                                                 peerDiscoveredHandler: self.peerDiscovered)
     }
     
-    @objc private func tapHandled(recognizer: UITapGestureRecognizer) {
-        let anchor = ARAnchor(name: "LaserRed", transform: arView!.cameraTransform.matrix)
-        arView.session.add(anchor: anchor)
+    @objc
+    private func tapHandled(recognizer: UITapGestureRecognizer) {
+        
+        let location = recognizer.location(in: arView)
+
+        let results = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal)
+
+        if let firstResult = results.first {
+            let anchor = ARAnchor(name: "shell", transform: firstResult.worldTransform)
+
+            arView.session.add(anchor: anchor)
+        } else {
+            print("Object placement failed - couldn't find surface.")
+        }
     }
     
     func placeObject(named entityName: String, for anchor: ARAnchor) {
@@ -73,17 +122,23 @@ class ViewController: UIViewController {
         anchorEntity.addChild(laserEntity)
         arView.scene.addAnchor(anchorEntity)
     }
+    
+    @objc
+    func addModelHandled(sender: UIButton) {
+        print("Hello world")
+    }
 }
 
 extension ViewController: ARSessionDelegate {
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
-            if let anchorname = anchor.name, anchorname == "LaserRed" {
+            if let anchorname = anchor.name, anchorname == "shell" {
                 placeObject(named: anchorname, for: anchor)
             }
             
             if let participantAnchor = anchor as? ARParticipantAnchor {
                 print("Successfully connected to another user")
+                connectionStatusView.layer.backgroundColor = UIColor.systemGreen.cgColor
                 let anchorEntity = AnchorEntity(anchor: participantAnchor)
                 
                 let mesh = MeshResource.generateSphere(radius: 0.03)
@@ -151,6 +206,11 @@ extension ViewController {
             A peer wants to join the experience.
             Hold the phones next to each other.
             """)
+        
+        DispatchQueue.main.async {
+            self.connectionStatusView.layer.backgroundColor = UIColor.systemYellow.cgColor
+        }
+        
         // Provide your session ID to the new user so they can keep track of your anchors.
         sendARSessionIDTo(peers: [peer])
     }
@@ -159,7 +219,10 @@ extension ViewController {
         guard let multipeerSession = multipeerSession else { return }
 
         print("A peer has left the shared experience.")
-        
+        DispatchQueue.main.async {
+            self.connectionStatusView.layer.backgroundColor = UIColor.systemRed.cgColor
+        }
+
         // Remove all ARAnchors associated with the peer that just left the experience.
         if let sessionID = multipeerSession.peerSessionIDs[peer] {
             removeAllAnchorsOriginatingFromARSessionWithID(sessionID)
@@ -188,6 +251,10 @@ extension ViewController {
             multipeerSession.sendToAllPeers(encodedData, reliably: dataIsCritical)
         } else {
             print("Deferred sending collaboration to later because there are no peers.")
+            let color = connectionStatusView.layer.backgroundColor
+            UIView.animate(withDuration: 0.1) {
+                self.connectionStatusView.layer.backgroundColor = UIColor.systemBlue.cgColor
+            }
         }
     }
 }
