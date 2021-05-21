@@ -41,6 +41,53 @@ class ViewController: UIViewController {
     var multipeerSession: MultipeerSession?
     var sessionIDObservation: NSKeyValueObservation?
     
+    private lazy var acceptModelBtn: UIButton = {
+        let button = UIButton()
+        
+        button.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        button.layer.cornerRadius = 35
+        button.tintColor = UIColor(named: "gold")
+        let config = UIImage.SymbolConfiguration(pointSize: 50)
+        button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 70),
+            button.widthAnchor.constraint(equalToConstant: 70)
+        ])
+        button.addTarget(self, action: #selector(acceptModel), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var skipModelBtn: UIButton = {
+        let button = UIButton()
+        
+        button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        button.layer.cornerRadius = 35
+        button.tintColor = UIColor(named: "gold")
+        let config = UIImage.SymbolConfiguration(pointSize: 50)
+        button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 70),
+            button.widthAnchor.constraint(equalToConstant: 70)
+        ])
+        button.addTarget(self, action: #selector(skipModel), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var modelPlaceControlStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.alignment = .fill
+        stack.spacing = 100
+        stack.addArrangedSubview(skipModelBtn)
+        stack.addArrangedSubview(acceptModelBtn)
+        stack.isHidden = true
+        return stack
+    }()
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -57,6 +104,8 @@ class ViewController: UIViewController {
     }
     
     private func setupARView() {
+        arView.focusEntity?.isEnabled = false
+
         arView.automaticallyConfigureSession = false
         
         let config = ARWorldTrackingConfiguration()
@@ -71,12 +120,16 @@ class ViewController: UIViewController {
     func setupControlHandler() {
         arView.addSubview(addModelButton)
         arView.addSubview(connectionStatusView)
-
+        arView.addSubview(modelPlaceControlStack)
+        
         NSLayoutConstraint.activate([
             addModelButton.heightAnchor.constraint(equalToConstant: 50),
             addModelButton.widthAnchor.constraint(equalToConstant: 150),
             addModelButton.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             addModelButton.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -50),
+            
+            modelPlaceControlStack.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
+            modelPlaceControlStack.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -24),
             
             connectionStatusView.heightAnchor.constraint(equalToConstant: 10),
             connectionStatusView.widthAnchor.constraint(equalToConstant: 10),
@@ -138,13 +191,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc
-    func addModelHandled(sender: UIButton) {
-                
-        let model = Models().all[0]
-        
-        selectedModel = model
-        selectedModel?.asyncLoadModelEntity()
+    func placeObject(_ model: Model) {
+        model.asyncLoadModelEntity()
 
         let location = CGPoint(x: arView.bounds.maxX / 2, y: arView.bounds.maxY / 2)
 
@@ -155,9 +203,42 @@ class ViewController: UIViewController {
             let anchor = ARAnchor(name: model.name, transform: firstResult.worldTransform)
 
             arView.session.add(anchor: anchor)
+            
+            selectedModel = nil
+            collectionIsEnabled(true)
+
         } else {
             print("Object placement failed - couldn't find surface.")
         }
+    }
+    
+    @objc
+    func addModelHandled(sender: UIButton) {
+        
+        collectionIsEnabled(false)
+
+        let model = Models().all[0]
+        selectedModel = model
+    }
+    
+    @objc
+    func acceptModel() {
+        collectionIsEnabled(false)
+        
+        guard let model = selectedModel else { return }
+        placeObject(model)
+    }
+    
+    @objc
+    func skipModel() {
+        collectionIsEnabled(true)
+        selectedModel = nil
+    }
+    
+    func collectionIsEnabled(_ isEnabled: Bool) {
+        arView.focusEntity?.isEnabled = !isEnabled
+        addModelButton.isHidden = !isEnabled
+        modelPlaceControlStack.isHidden = isEnabled
     }
 }
 

@@ -15,6 +15,7 @@
 		3A21D28226583AD000E11363 /* stone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D27F26583ACF00E11363 /* stone.usdz */; };
 		3A21D28326583AD000E11363 /* wood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28026583AD000E11363 /* wood.usdz */; };
 		3A21D28426583AD000E11363 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28126583AD000E11363 /* chair.usdz */; };
+		3A21D2892658660500E11363 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2882658660500E11363 /* View.xib */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
 		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
@@ -32,6 +33,7 @@
 		3A21D27F26583ACF00E11363 /* stone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = stone.usdz; sourceTree = "<group>"; };
 		3A21D28026583AD000E11363 /* wood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood.usdz; sourceTree = "<group>"; };
 		3A21D28126583AD000E11363 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
+		3A21D2882658660500E11363 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
@@ -98,6 +100,7 @@
 			children = (
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
 				3AD251682656D7F200A9A67D /* ViewController.swift */,
+				3A21D2882658660500E11363 /* View.xib */,
 				3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */,
 				3AD251742656D7F500A9A67D /* Info.plist */,
 				3A21D2792657F0A300E11363 /* FocusARView.swift */,
@@ -177,6 +180,7 @@
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
 				3A21D28426583AD000E11363 /* chair.usdz in Resources */,
 				3A21D28326583AD000E11363 /* wood.usdz in Resources */,
+				3A21D2892658660500E11363 /* View.xib in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
 				3A21D28226583AD000E11363 /* stone.usdz in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
