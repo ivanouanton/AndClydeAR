@@ -10,19 +10,28 @@
 		3A21D2732657DA8E00E11363 /* shell.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2722657DA8E00E11363 /* shell.usdz */; };
 		3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 3A21D2772657F05D00E11363 /* FocusEntity */; };
 		3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2792657F0A300E11363 /* FocusARView.swift */; };
+		3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */; };
+		3A21D27E26583A3D00E11363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27D26583A3D00E11363 /* Model.swift */; };
+		3A21D28226583AD000E11363 /* stone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D27F26583ACF00E11363 /* stone.usdz */; };
+		3A21D28326583AD000E11363 /* wood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28026583AD000E11363 /* wood.usdz */; };
+		3A21D28426583AD000E11363 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28126583AD000E11363 /* chair.usdz */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
 		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
 		3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516C2656D7F200A9A67D /* Main.storyboard */; };
 		3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516F2656D7F500A9A67D /* Assets.xcassets */; };
 		3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */; };
-		3AD2517B2656DB0D00A9A67D /* LaserRed.reality in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2517A2656DB0D00A9A67D /* LaserRed.reality */; };
 		3AD2517E2656E3E400A9A67D /* MultipeerSession in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD2517D2656E3E400A9A67D /* MultipeerSession */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A21D2722657DA8E00E11363 /* shell.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shell.usdz; sourceTree = "<group>"; };
 		3A21D2792657F0A300E11363 /* FocusARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
+		3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Multipeer.swift"; sourceTree = "<group>"; };
+		3A21D27D26583A3D00E11363 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3A21D27F26583ACF00E11363 /* stone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = stone.usdz; sourceTree = "<group>"; };
+		3A21D28026583AD000E11363 /* wood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood.usdz; sourceTree = "<group>"; };
+		3A21D28126583AD000E11363 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
@@ -31,7 +40,6 @@
 		3AD2516F2656D7F500A9A67D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD251722656D7F500A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD251742656D7F500A9A67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AD2517A2656DB0D00A9A67D /* LaserRed.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaserRed.reality; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A21D28626583AEF00E11363 /* 3DModels */ = {
+			isa = PBXGroup;
+			children = (
+				3A21D28126583AD000E11363 /* chair.usdz */,
+				3A21D27F26583ACF00E11363 /* stone.usdz */,
+				3A21D28026583AD000E11363 /* wood.usdz */,
+				3A21D2722657DA8E00E11363 /* shell.usdz */,
+			);
+			path = 3DModels;
+			sourceTree = "<group>";
+		};
+		3A21D28726583B7800E11363 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3AD2516A2656D7F200A9A67D /* Experience.rcproject */,
+				3AD2516C2656D7F200A9A67D /* Main.storyboard */,
+				3AD2516F2656D7F500A9A67D /* Assets.xcassets */,
+				3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		3AD2515A2656D7F200A9A67D = {
 			isa = PBXGroup;
 			children = (
@@ -66,16 +96,14 @@
 		3AD251652656D7F200A9A67D /* AndClyde */ = {
 			isa = PBXGroup;
 			children = (
-				3A21D2722657DA8E00E11363 /* shell.usdz */,
-				3AD2517A2656DB0D00A9A67D /* LaserRed.reality */,
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
 				3AD251682656D7F200A9A67D /* ViewController.swift */,
-				3AD2516A2656D7F200A9A67D /* Experience.rcproject */,
-				3AD2516C2656D7F200A9A67D /* Main.storyboard */,
-				3AD2516F2656D7F500A9A67D /* Assets.xcassets */,
-				3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */,
+				3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */,
 				3AD251742656D7F500A9A67D /* Info.plist */,
 				3A21D2792657F0A300E11363 /* FocusARView.swift */,
+				3A21D27D26583A3D00E11363 /* Model.swift */,
+				3A21D28726583B7800E11363 /* Assets */,
+				3A21D28626583AEF00E11363 /* 3DModels */,
 			);
 			path = AndClyde;
 			sourceTree = "<group>";
@@ -147,8 +175,10 @@
 			files = (
 				3A21D2732657DA8E00E11363 /* shell.usdz in Resources */,
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
+				3A21D28426583AD000E11363 /* chair.usdz in Resources */,
+				3A21D28326583AD000E11363 /* wood.usdz in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
-				3AD2517B2656DB0D00A9A67D /* LaserRed.reality in Resources */,
+				3A21D28226583AD000E11363 /* stone.usdz in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +192,8 @@
 			files = (
 				3AD251692656D7F200A9A67D /* ViewController.swift in Sources */,
 				3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */,
+				3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */,
+				3A21D27E26583A3D00E11363 /* Model.swift in Sources */,
 				3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */,
 				3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */,
 			);
