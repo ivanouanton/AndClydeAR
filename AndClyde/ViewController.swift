@@ -19,15 +19,11 @@ class ViewController: UIViewController {
         }
     }
 
-    private lazy var addModelButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Add Model", for: .normal)
-        button.layer.cornerRadius = 10
-        button.layer.backgroundColor = UIColor.black.withAlphaComponent(0.25).cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(addModelHandled(sender:)), for: .touchUpInside)
-        return button
+    private lazy var modelsCollection: PreviewCollectionView = {
+        let view = PreviewCollectionView()
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private lazy var logoLabel: UILabel = {
@@ -108,8 +104,8 @@ class ViewController: UIViewController {
         
         arView.session.delegate = self
         
-        let tabGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(tapHandled(recognizer:)))
-        arView.addGestureRecognizer(tabGestureRecogniser)
+//        let tabGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(tapHandled(recognizer:)))
+//        arView.addGestureRecognizer(tabGestureRecogniser)
     }
     
     private func setupARView() {
@@ -127,17 +123,19 @@ class ViewController: UIViewController {
     }
     
     func setupControlHandler() {
-        arView.addSubview(addModelButton)
+        arView.addSubview(modelsCollection)
         arView.addSubview(connectionStatusView)
         arView.addSubview(modelPlaceControlStack)
         arView.addSubview(logoLabel)
         
+        modelsCollection.items = Models().all
+        
         NSLayoutConstraint.activate([
-            addModelButton.heightAnchor.constraint(equalToConstant: 50),
-            addModelButton.widthAnchor.constraint(equalToConstant: 150),
-            addModelButton.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
-            addModelButton.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -50),
-            
+            modelsCollection.heightAnchor.constraint(equalToConstant: 120),
+            modelsCollection.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
+            modelsCollection.leadingAnchor.constraint(equalTo: arView.leadingAnchor),
+            modelsCollection.bottomAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+
             modelPlaceControlStack.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             modelPlaceControlStack.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -24),
             
@@ -171,21 +169,21 @@ class ViewController: UIViewController {
                                                 peerDiscoveredHandler: self.peerDiscovered)
     }
     
-    @objc
-    private func tapHandled(recognizer: UITapGestureRecognizer) {
-        
-        let location = recognizer.location(in: arView)
-
-        let results = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal)
-
-        if let firstResult = results.first {
-            let anchor = ARAnchor(name: "shell", transform: firstResult.worldTransform)
-
-            arView.session.add(anchor: anchor)
-        } else {
-            print("Object placement failed - couldn't find surface.")
-        }
-    }
+//    @objc
+//    private func tapHandled(recognizer: UITapGestureRecognizer) {
+//
+//        let location = recognizer.location(in: arView)
+//
+//        let results = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal)
+//
+//        if let firstResult = results.first {
+//            let anchor = ARAnchor(name: "shell", transform: firstResult.worldTransform)
+//
+//            arView.session.add(anchor: anchor)
+//        } else {
+//            print("Object placement failed - couldn't find surface.")
+//        }
+//    }
     
     func placeObject(named entityName: String, for anchor: ARAnchor) {
         let model = Model(entityName)
@@ -225,14 +223,14 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc
-    func addModelHandled(sender: UIButton) {
-        
-        collectionIsEnabled(false)
-
-        let model = Models().all[0]
-        selectedModel = model
-    }
+//    @objc
+//    func addModelHandled(sender: UIButton) {
+//
+//        collectionIsEnabled(false)
+//
+//        let model = Models().all[0]
+//        selectedModel = model
+//    }
     
     @objc
     func acceptModel() {
@@ -250,8 +248,15 @@ class ViewController: UIViewController {
     
     func collectionIsEnabled(_ isEnabled: Bool) {
         arView.focusEntity?.isEnabled = !isEnabled
-        addModelButton.isHidden = !isEnabled
+        modelsCollection.isHidden = !isEnabled
         modelPlaceControlStack.isHidden = isEnabled
+    }
+}
+extension ViewController: PreviewCollectionViewDelegate {
+    func collectionView(_ collectionView: PreviewCollectionView, didSelect item: Model) {
+        collectionIsEnabled(false)
+
+        selectedModel = item
     }
 }
 
