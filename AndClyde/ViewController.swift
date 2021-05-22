@@ -338,16 +338,16 @@ extension ViewController: ARSessionDelegate {
             if let participantAnchor = anchor as? ARParticipantAnchor {
                 print("Successfully connected to another user")
                 connectionStatusView.layer.backgroundColor = UIColor.systemGreen.cgColor
-                let anchorEntity = AnchorEntity(anchor: participantAnchor)
-
-                let mesh = MeshResource.generateSphere(radius: 0.03)
-                let color = UIColor.red
-                let material = SimpleMaterial(color: color, isMetallic: false)
-                let coloredSphere = ModelEntity(mesh: mesh, materials: [material])
-
-                anchorEntity.addChild(coloredSphere)
-
-                arView.scene.addAnchor(anchorEntity)
+//                let anchorEntity = AnchorEntity(anchor: participantAnchor)
+//
+//                let mesh = MeshResource.generateSphere(radius: 0.03)
+//                let color = UIColor.red
+//                let material = SimpleMaterial(color: color, isMetallic: false)
+//                let coloredSphere = ModelEntity(mesh: mesh, materials: [material])
+//
+//                anchorEntity.addChild(coloredSphere)
+//
+//                arView.scene.addAnchor(anchorEntity)
             }
         }
     }
