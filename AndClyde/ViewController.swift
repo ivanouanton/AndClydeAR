@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         view.layer.cornerRadius = 4
         view.layer.backgroundColor = UIColor.systemRed.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.heightAnchor.constraint(equalToConstant: 8),
+            view.widthAnchor.constraint(equalToConstant: 8)
+        ])
         return view
     }()
     
@@ -93,6 +97,43 @@ class ViewController: UIViewController {
         return stack
     }()
     
+    private lazy var screenshot: UIButton = {
+        let button = UIButton()
+        
+        button.setImage(UIImage(systemName: "camera.circle"), for: .normal)
+        button.tintColor = UIColor.white.withAlphaComponent(0.5)
+        let config = UIImage.SymbolConfiguration(pointSize: 30)
+        button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(takeScreenshot), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var screenRecordBtn: UIButton = {
+        let button = UIButton()
+        
+        button.setImage(UIImage(systemName: "record.circle"), for: .normal)
+        button.tintColor = UIColor.white.withAlphaComponent(0.5)
+        let config = UIImage.SymbolConfiguration(pointSize: 30)
+        button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(takeScreenRecord), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var recordStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.alignment = .center
+        stack.spacing = 20
+        stack.addArrangedSubview(connectionStatusView)
+        stack.addArrangedSubview(screenRecordBtn)
+        stack.addArrangedSubview(screenshot)
+        return stack
+    }()
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -103,9 +144,6 @@ class ViewController: UIViewController {
         setupMultipeerSession()
         
         arView.session.delegate = self
-        
-//        let tabGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(tapHandled(recognizer:)))
-//        arView.addGestureRecognizer(tabGestureRecogniser)
     }
     
     private func setupARView() {
@@ -124,10 +162,10 @@ class ViewController: UIViewController {
     
     func setupControlHandler() {
         arView.addSubview(modelsCollection)
-        arView.addSubview(connectionStatusView)
         arView.addSubview(modelPlaceControlStack)
         arView.addSubview(logoLabel)
-        
+        arView.addSubview(recordStack)
+
         modelsCollection.items = Models().all
         
         NSLayoutConstraint.activate([
@@ -141,11 +179,9 @@ class ViewController: UIViewController {
             
             logoLabel.topAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.topAnchor, constant: 8),
             logoLabel.leadingAnchor.constraint(equalTo: arView.leadingAnchor, constant: 24),
-
-            connectionStatusView.heightAnchor.constraint(equalToConstant: 8),
-            connectionStatusView.widthAnchor.constraint(equalToConstant: 8),
-            connectionStatusView.centerYAnchor.constraint(equalTo: logoLabel.centerYAnchor),
-            connectionStatusView.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -24),
+            
+            recordStack.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -24),
+            recordStack.centerYAnchor.constraint(equalTo: logoLabel.centerYAnchor)
         ])
     }
     
@@ -168,22 +204,6 @@ class ViewController: UIViewController {
                                                 peerLeftHandler: self.peerLeft,
                                                 peerDiscoveredHandler: self.peerDiscovered)
     }
-    
-//    @objc
-//    private func tapHandled(recognizer: UITapGestureRecognizer) {
-//
-//        let location = recognizer.location(in: arView)
-//
-//        let results = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal)
-//
-//        if let firstResult = results.first {
-//            let anchor = ARAnchor(name: "shell", transform: firstResult.worldTransform)
-//
-//            arView.session.add(anchor: anchor)
-//        } else {
-//            print("Object placement failed - couldn't find surface.")
-//        }
-//    }
     
     func placeObject(named entityName: String, for anchor: ARAnchor) {
         let model = Model(entityName)
@@ -223,15 +243,6 @@ class ViewController: UIViewController {
         }
     }
     
-//    @objc
-//    func addModelHandled(sender: UIButton) {
-//
-//        collectionIsEnabled(false)
-//
-//        let model = Models().all[0]
-//        selectedModel = model
-//    }
-    
     @objc
     func acceptModel() {
         collectionIsEnabled(false)
@@ -244,6 +255,37 @@ class ViewController: UIViewController {
     func skipModel() {
         collectionIsEnabled(true)
         selectedModel = nil
+    }
+    
+    @objc
+    func takeScreenshot() {
+        //1. Create A Snapshot
+        self.arView.snapshot(saveToHDR: true) { image in
+            guard let image = image else { return }
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+    
+    @objc
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+
+        if let error = error {
+            print("Error Saving ARKit Scene \(error)")
+        } else {
+            print("ARKit Scene Successfully Saved")
+            
+            UIView.animate(withDuration: 1, animations: {
+                self.screenshot.tintColor = UIColor.systemGreen
+            }, completion: { _ in
+                self.screenshot.tintColor = UIColor.white.withAlphaComponent(0.5)
+
+            })
+        }
+    }
+    
+    @objc
+    func takeScreenRecord() {
+        
     }
     
     func collectionIsEnabled(_ isEnabled: Bool) {
