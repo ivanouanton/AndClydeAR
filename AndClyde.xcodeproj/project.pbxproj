@@ -100,6 +100,7 @@
 			children = (
 				3AD251652656D7F200A9A67D /* AndClyde */,
 				3AD251642656D7F200A9A67D /* Products */,
+				E08C9752CFA89C9D5CF65809 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +127,13 @@
 				3A21D28626583AEF00E11363 /* 3DModels */,
 			);
 			path = AndClyde;
+			sourceTree = "<group>";
+		};
+		E08C9752CFA89C9D5CF65809 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

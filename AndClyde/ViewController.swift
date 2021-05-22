@@ -6,13 +6,18 @@
 //
 
 import UIKit
-import RealityKit
 import ARKit
+import ReplayKit
+import RealityKit
 import MultipeerSession
 
 class ViewController: UIViewController {
     
     @IBOutlet var arView: FocusARView!
+    
+    let recorder = RPScreenRecorder.shared()
+    var isRecording: Bool = false
+    
     var selectedModel: Model? {
         didSet {
             arView.focusEntity?.isEnabled = self.selectedModel != nil
@@ -55,7 +60,7 @@ class ViewController: UIViewController {
         
         button.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
         button.layer.cornerRadius = 35
-        button.tintColor = UIColor(named: "gold")
+        button.tintColor = UIColor.white.withAlphaComponent(0.5)
         let config = UIImage.SymbolConfiguration(pointSize: 50)
         button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +77,7 @@ class ViewController: UIViewController {
         
         button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         button.layer.cornerRadius = 35
-        button.tintColor = UIColor(named: "gold")
+        button.tintColor = UIColor.white.withAlphaComponent(0.5)
         let config = UIImage.SymbolConfiguration(pointSize: 50)
         button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -136,7 +141,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+         
         setupARView()
         
         setupControlHandler()
@@ -285,7 +290,28 @@ class ViewController: UIViewController {
     
     @objc
     func takeScreenRecord() {
-        
+        isRecording = !isRecording
+        if isRecording {
+            screenRecordBtn.tintColor = UIColor.systemRed
+            recorder.startRecording { (error) in
+                if let error = error {
+                    print(error)
+                }
+            }
+            
+        } else {
+            screenRecordBtn.tintColor = UIColor.white.withAlphaComponent(0.5)
+            recorder.stopRecording { (previewVC, error) in
+                if let previewVC = previewVC {
+                    previewVC.previewControllerDelegate = self
+                    self.present(previewVC, animated: true, completion: nil)
+                }
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
     
     func collectionIsEnabled(_ isEnabled: Bool) {
@@ -324,5 +350,11 @@ extension ViewController: ARSessionDelegate {
                 arView.scene.addAnchor(anchorEntity)
             }
         }
+    }
+}
+
+extension ViewController: RPPreviewViewControllerDelegate {
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
