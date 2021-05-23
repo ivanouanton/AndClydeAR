@@ -174,7 +174,7 @@ class ViewController: UIViewController {
         modelsCollection.items = Models().all
         
         NSLayoutConstraint.activate([
-            modelsCollection.heightAnchor.constraint(equalToConstant: 120),
+            modelsCollection.heightAnchor.constraint(equalToConstant: 130),
             modelsCollection.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             modelsCollection.leadingAnchor.constraint(equalTo: arView.leadingAnchor),
             modelsCollection.bottomAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.bottomAnchor, constant: -16),
@@ -325,6 +325,12 @@ extension ViewController: PreviewCollectionViewDelegate {
         collectionIsEnabled(false)
 
         selectedModel = item
+    }
+    
+    func collectionView( _ collectionView: PreviewCollectionView, didSelectStore item: Model) {
+        if let url = URL(string: "https://www.andclyde.com") {
+            UIApplication.shared.open(url)
+        }
     }
 }
 

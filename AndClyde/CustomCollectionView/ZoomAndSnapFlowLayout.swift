@@ -17,7 +17,7 @@ class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
 
         scrollDirection = .horizontal
         minimumLineSpacing = 20
-        itemSize = CGSize(width: 80, height: 80)
+        itemSize = CGSize(width: 80, height: 100)
     }
 
     required init?(coder aDecoder: NSCoder) {

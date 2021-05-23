@@ -9,6 +9,7 @@ import UIKit
 
 protocol PreviewCollectionViewDelegate: AnyObject {
     func collectionView( _ collectionView: PreviewCollectionView, didSelect item: Model)
+    func collectionView( _ collectionView: PreviewCollectionView, didSelectStore item: Model)
 }
 
 class PreviewCollectionView: UIView {
@@ -75,6 +76,9 @@ extension PreviewCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         cell.handler = { index in
             self.delegate?.collectionView(self, didSelect: self.items[index])
         }
+        cell.handlerStore = { index in
+            self.delegate?.collectionView(self, didSelectStore: self.items[index])
+        }
         cell.index = indexPath.item
         return cell
     }
@@ -89,7 +93,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     var index: Int = 0
     var handler: (_ index: Int) -> Void = { index in }
-    
+    var handlerStore: (_ index: Int) -> Void = { index in }
+
     lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
@@ -102,6 +107,18 @@ class CollectionViewCell: UICollectionViewCell {
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(selectItem), for: .touchUpInside)
+        return view
+    }()
+    
+    lazy var storeBtn: UIButton = {
+        let view = UIButton()
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        view.setTitle("view in the store", for: .normal)
+        view.titleLabel?.font = view.titleLabel?.font.withSize(8)
+        view.setTitleColor(.white, for: .normal)
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(viewStore), for: .touchUpInside)
         return view
     }()
     
@@ -120,6 +137,7 @@ class CollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         contentView.addSubview(button)
+        contentView.addSubview(storeBtn)
         
         NSLayoutConstraint.activate([
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -130,7 +148,12 @@ class CollectionViewCell: UICollectionViewCell {
             button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             button.topAnchor.constraint(equalTo: contentView.topAnchor),
-            button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            storeBtn.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            storeBtn.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            storeBtn.topAnchor.constraint(equalTo: button.bottomAnchor),
+            storeBtn.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            storeBtn.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 
@@ -142,5 +165,9 @@ class CollectionViewCell: UICollectionViewCell {
     func selectItem() {
         handler(index)
     }
-
+    
+    @objc
+    func viewStore() {
+        handlerStore(index)
+    }
 }
