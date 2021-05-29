@@ -41,9 +41,10 @@ struct Models {
         let gold = Model("stone", scaleCompensation: 1)
         let shell = Model("shell", scaleCompensation: 0.3)
         let wood = Model("wood", scaleCompensation: 0.3)
-        let chair = Model("chair", scaleCompensation: 0.005)
+        let conch = Model("conch", scaleCompensation: 0.3)
+        let wood_long = Model("wood_long", scaleCompensation: 0.3)
 
-        self.all += [gold, shell, wood, chair]
+        self.all += [gold, shell, wood, conch, wood_long]
 
     }
 }

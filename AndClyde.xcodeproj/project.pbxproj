@@ -14,11 +14,12 @@
 		3A21D27E26583A3D00E11363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27D26583A3D00E11363 /* Model.swift */; };
 		3A21D28226583AD000E11363 /* stone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D27F26583ACF00E11363 /* stone.usdz */; };
 		3A21D28326583AD000E11363 /* wood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28026583AD000E11363 /* wood.usdz */; };
-		3A21D28426583AD000E11363 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28126583AD000E11363 /* chair.usdz */; };
 		3A21D2892658660500E11363 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2882658660500E11363 /* View.xib */; };
 		3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28A26586E6D00E11363 /* Berlindah.otf */; };
 		3A21D2932658791C00E11363 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */; };
 		3A21D2942658791C00E11363 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2922658791C00E11363 /* PreviewCollectionView.swift */; };
+		3A8DB2952662178D002FF484 /* conch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2912662178B002FF484 /* conch.usdz */; };
+		3A8DB2972662178D002FF484 /* wood_long.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2932662178D002FF484 /* wood_long.usdz */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
 		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
@@ -35,11 +36,12 @@
 		3A21D27D26583A3D00E11363 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3A21D27F26583ACF00E11363 /* stone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = stone.usdz; sourceTree = "<group>"; };
 		3A21D28026583AD000E11363 /* wood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood.usdz; sourceTree = "<group>"; };
-		3A21D28126583AD000E11363 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
 		3A21D2882658660500E11363 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		3A21D28A26586E6D00E11363 /* Berlindah.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Berlindah.otf; sourceTree = "<group>"; };
 		3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		3A21D2922658791C00E11363 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
+		3A8DB2912662178B002FF484 /* conch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = conch.usdz; sourceTree = "<group>"; };
+		3A8DB2932662178D002FF484 /* wood_long.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood_long.usdz; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
@@ -66,10 +68,11 @@
 		3A21D28626583AEF00E11363 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
-				3A21D28126583AD000E11363 /* chair.usdz */,
 				3A21D27F26583ACF00E11363 /* stone.usdz */,
 				3A21D28026583AD000E11363 /* wood.usdz */,
 				3A21D2722657DA8E00E11363 /* shell.usdz */,
+				3A8DB2912662178B002FF484 /* conch.usdz */,
+				3A8DB2932662178D002FF484 /* wood_long.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -204,12 +207,13 @@
 				3A21D2732657DA8E00E11363 /* shell.usdz in Resources */,
 				3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */,
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
-				3A21D28426583AD000E11363 /* chair.usdz in Resources */,
 				3A21D28326583AD000E11363 /* wood.usdz in Resources */,
+				3A8DB2972662178D002FF484 /* wood_long.usdz in Resources */,
 				3A21D2892658660500E11363 /* View.xib in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
 				3A21D28226583AD000E11363 /* stone.usdz in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
+				3A8DB2952662178D002FF484 /* conch.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
