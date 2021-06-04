@@ -15,11 +15,15 @@ class ViewController: UIViewController {
     
     @IBOutlet var arView: FocusARView!
     
+    var multipeerSession: MultipeerSession?
+    var sessionIDObservation: NSKeyValueObservation?
+    
     let recorder = RPScreenRecorder.shared()
     var isRecording: Bool = false {
         didSet {
             modelsCollection.isHidden = isRecording
             screenshot.isHidden = isRecording
+            occlusionBtn.isHidden = isRecording
             connectionStatusView.isHidden = isRecording
             screenRecordBtn.tintColor = isRecording ? UIColor.systemRed.withAlphaComponent(0.5) : UIColor.white.withAlphaComponent(0.5)
         }
@@ -58,9 +62,6 @@ class ViewController: UIViewController {
         ])
         return view
     }()
-    
-    var multipeerSession: MultipeerSession?
-    var sessionIDObservation: NSKeyValueObservation?
     
     private lazy var acceptModelBtn: UIButton = {
         let button = UIButton()
@@ -143,7 +144,20 @@ class ViewController: UIViewController {
         stack.addArrangedSubview(connectionStatusView)
         stack.addArrangedSubview(screenRecordBtn)
         stack.addArrangedSubview(screenshot)
+        stack.addArrangedSubview(occlusionBtn)
         return stack
+    }()
+    
+    private lazy var occlusionBtn: UIButton = {
+        let button = UIButton()
+        
+        button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        button.tintColor = UIColor.white.withAlphaComponent(0.5)
+        let config = UIImage.SymbolConfiguration(pointSize: 30)
+        button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(setupOcclusion), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidAppear(_ animated: Bool) {
@@ -317,6 +331,33 @@ class ViewController: UIViewController {
                     print(error)
                 }
             }
+        }
+    }
+    
+    @objc
+    func setupOcclusion() {
+        guard ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth),
+              ARWorldTrackingConfiguration.supportsSceneReconstruction(.meshWithClassification),
+              let configuration = arView.session.configuration as? ARWorldTrackingConfiguration
+        else {
+            let alert = UIAlertController(title: "Error", message: "Scene reconstruction requires a device with a LiDAR Scanner.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if configuration.frameSemantics.contains(.personSegmentation) {
+            configuration.frameSemantics.remove(.personSegmentation)
+        } else {
+            configuration.frameSemantics.insert(.personSegmentation)
+        }
+        
+        if arView.environment.sceneUnderstanding.options.contains(.occlusion) {
+            arView.environment.sceneUnderstanding.options.remove(.occlusion)
+            occlusionBtn.tintColor = UIColor.white.withAlphaComponent(0.5)
+        } else {
+            arView.environment.sceneUnderstanding.options.insert(.occlusion)
+            occlusionBtn.tintColor = .systemGreen
         }
     }
     
