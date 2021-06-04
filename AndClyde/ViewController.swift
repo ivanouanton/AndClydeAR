@@ -21,6 +21,7 @@ class ViewController: UIViewController {
             modelsCollection.isHidden = isRecording
             screenshot.isHidden = isRecording
             connectionStatusView.isHidden = isRecording
+            screenRecordBtn.tintColor = isRecording ? UIColor.systemRed.withAlphaComponent(0.5) : UIColor.white.withAlphaComponent(0.5)
         }
     }
     
@@ -271,7 +272,7 @@ class ViewController: UIViewController {
     @objc
     func takeScreenshot() {
         //1. Create A Snapshot
-        self.arView.snapshot(saveToHDR: true) { image in
+        self.arView.snapshot(saveToHDR: false) { image in
             guard let image = image else { return }
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
         }
@@ -298,15 +299,14 @@ class ViewController: UIViewController {
     func takeScreenRecord() {
         isRecording = !isRecording
         if isRecording {
-            screenRecordBtn.tintColor = UIColor.systemRed
             recorder.startRecording { (error) in
                 if let error = error {
+                    self.isRecording = !self.isRecording
                     print(error)
                 }
             }
             
         } else {
-            screenRecordBtn.tintColor = UIColor.white.withAlphaComponent(0.5)
             recorder.stopRecording { (previewVC, error) in
                 if let previewVC = previewVC {
                     previewVC.previewControllerDelegate = self
