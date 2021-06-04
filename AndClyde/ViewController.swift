@@ -16,7 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet var arView: FocusARView!
     
     let recorder = RPScreenRecorder.shared()
-    var isRecording: Bool = false
+    var isRecording: Bool = false {
+        didSet {
+            modelsCollection.isHidden = isRecording
+            screenshot.isHidden = isRecording
+            connectionStatusView.isHidden = isRecording
+        }
+    }
     
     var selectedModel: Model? {
         didSet {

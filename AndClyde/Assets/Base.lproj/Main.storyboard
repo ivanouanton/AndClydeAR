@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhy-gn-4hz">
-                                <rect key="frame" x="166" y="794" width="82" height="44"/>
+                                <rect key="frame" x="179.5" y="798" width="55" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Berlindah" family="Berlindah" pointSize="27"/>
                                 <state key="normal" title="START">
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&amp;Clyde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-W0-G6b">
-                                <rect key="frame" x="47" y="245" width="320.5" height="116.5"/>
+                                <rect key="frame" x="138.5" y="253" width="137.5" height="100.5"/>
                                 <fontDescription key="fontDescription" name="Berlindah" family="Berlindah" pointSize="100"/>
                                 <color key="textColor" name="gold"/>
                                 <nil key="highlightedColor"/>
