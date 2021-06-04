@@ -38,7 +38,7 @@ struct Models {
     var all: [Model] = []
     
     init() {
-        let gold = Model("stone", scaleCompensation: 1)
+        let gold = Model("stone", scaleCompensation: 0.3)
         let shell = Model("shell", scaleCompensation: 0.3)
         let wood = Model("wood", scaleCompensation: 0.3)
         let conch = Model("conch", scaleCompensation: 0.3)
