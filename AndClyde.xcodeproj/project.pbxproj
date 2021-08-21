@@ -3,22 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A21D2732657DA8E00E11363 /* shell.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2722657DA8E00E11363 /* shell.usdz */; };
+		3A21D2782657F05D00E11363 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3A21D2772657F05D00E11363 /* SwiftPackageProductDependency */; };
+		3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2792657F0A300E11363 /* FocusARView.swift */; };
+		3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */; };
+		3A21D27E26583A3D00E11363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27D26583A3D00E11363 /* Model.swift */; };
+		3A21D28226583AD000E11363 /* stone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D27F26583ACF00E11363 /* stone.usdz */; };
+		3A21D28326583AD000E11363 /* wood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28026583AD000E11363 /* wood.usdz */; };
+		3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28A26586E6D00E11363 /* Berlindah.otf */; };
+		3A21D2932658791C00E11363 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */; };
+		3A21D2942658791C00E11363 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2922658791C00E11363 /* PreviewCollectionView.swift */; };
+		3A8DB2952662178D002FF484 /* conch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2912662178B002FF484 /* conch.usdz */; };
+		3A8DB2972662178D002FF484 /* wood_long.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2932662178D002FF484 /* wood_long.usdz */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
 		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
 		3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516C2656D7F200A9A67D /* Main.storyboard */; };
 		3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516F2656D7F500A9A67D /* Assets.xcassets */; };
 		3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */; };
+		3AD2517E2656E3E400A9A67D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD2517D2656E3E400A9A67D /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A21D2722657DA8E00E11363 /* shell.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shell.usdz; sourceTree = "<group>"; };
+		3A21D2792657F0A300E11363 /* FocusARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
+		3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Multipeer.swift"; sourceTree = "<group>"; };
+		3A21D27D26583A3D00E11363 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3A21D27F26583ACF00E11363 /* stone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = stone.usdz; sourceTree = "<group>"; };
+		3A21D28026583AD000E11363 /* wood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood.usdz; sourceTree = "<group>"; };
+		3A21D28A26586E6D00E11363 /* Berlindah.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Berlindah.otf; sourceTree = "<group>"; };
+		3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
+		3A21D2922658791C00E11363 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
+		3A8DB2912662178B002FF484 /* conch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = conch.usdz; sourceTree = "<group>"; };
+		3A8DB2932662178D002FF484 /* wood_long.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood_long.usdz; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		3AD2516A2656D7F200A9A67D /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		3AD2516D2656D7F200A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AD2516F2656D7F500A9A67D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,17 +55,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A21D2782657F05D00E11363 /* BuildFile in Frameworks */,
+				3AD2517E2656E3E400A9A67D /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A21D28626583AEF00E11363 /* 3DModels */ = {
+			isa = PBXGroup;
+			children = (
+				3A21D27F26583ACF00E11363 /* stone.usdz */,
+				3A21D28026583AD000E11363 /* wood.usdz */,
+				3A21D2722657DA8E00E11363 /* shell.usdz */,
+				3A8DB2912662178B002FF484 /* conch.usdz */,
+				3A8DB2932662178D002FF484 /* wood_long.usdz */,
+			);
+			path = 3DModels;
+			sourceTree = "<group>";
+		};
+		3A21D28726583B7800E11363 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3A21D28A26586E6D00E11363 /* Berlindah.otf */,
+				3AD2516A2656D7F200A9A67D /* Experience.rcproject */,
+				3AD2516C2656D7F200A9A67D /* Main.storyboard */,
+				3AD2516F2656D7F500A9A67D /* Assets.xcassets */,
+				3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3A21D2952658792500E11363 /* CustomCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3A21D2922658791C00E11363 /* PreviewCollectionView.swift */,
+				3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */,
+			);
+			path = CustomCollectionView;
+			sourceTree = "<group>";
+		};
 		3AD2515A2656D7F200A9A67D = {
 			isa = PBXGroup;
 			children = (
 				3AD251652656D7F200A9A67D /* AndClyde */,
 				3AD251642656D7F200A9A67D /* Products */,
+				E08C9752CFA89C9D5CF65809 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +118,22 @@
 			children = (
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
 				3AD251682656D7F200A9A67D /* ViewController.swift */,
-				3AD2516A2656D7F200A9A67D /* Experience.rcproject */,
-				3AD2516C2656D7F200A9A67D /* Main.storyboard */,
-				3AD2516F2656D7F500A9A67D /* Assets.xcassets */,
-				3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */,
+				3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */,
 				3AD251742656D7F500A9A67D /* Info.plist */,
+				3A21D2792657F0A300E11363 /* FocusARView.swift */,
+				3A21D27D26583A3D00E11363 /* Model.swift */,
+				3A21D2952658792500E11363 /* CustomCollectionView */,
+				3A21D28726583B7800E11363 /* Assets */,
+				3A21D28626583AEF00E11363 /* 3DModels */,
 			);
 			path = AndClyde;
+			sourceTree = "<group>";
+		};
+		E08C9752CFA89C9D5CF65809 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +152,10 @@
 			dependencies = (
 			);
 			name = AndClyde;
+			packageProductDependencies = (
+				3AD2517D2656E3E400A9A67D /* SwiftPackageProductDependency */,
+				3A21D2772657F05D00E11363 /* SwiftPackageProductDependency */,
+			);
 			productName = AndClyde;
 			productReference = 3AD251632656D7F200A9A67D /* AndClyde.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +183,10 @@
 				Base,
 			);
 			mainGroup = 3AD2515A2656D7F200A9A67D;
+			packageReferences = (
+				3AD2517C2656E3E400A9A67D /* RemoteSwiftPackageReference */,
+				3A21D2762657F05D00E11363 /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = 3AD251642656D7F200A9A67D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,9 +201,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A21D2732657DA8E00E11363 /* shell.usdz in Resources */,
+				3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */,
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
+				3A21D28326583AD000E11363 /* wood.usdz in Resources */,
+				3A8DB2972662178D002FF484 /* wood_long.usdz in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
+				3A21D28226583AD000E11363 /* stone.usdz in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
+				3A8DB2952662178D002FF484 /* conch.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD251692656D7F200A9A67D /* ViewController.swift in Sources */,
+				3A21D2932658791C00E11363 /* ZoomAndSnapFlowLayout.swift in Sources */,
 				3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */,
+				3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */,
+				3A21D27E26583A3D00E11363 /* Model.swift in Sources */,
+				3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */,
 				3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */,
+				3A21D2942658791C00E11363 /* PreviewCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,15 +374,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVMQ9FHDFX;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = A42TUUCYD6;
 				INFOPLIST_FILE = AndClyde/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andclydeCo.AndClyde;
+				MARKETING_VERSION = 0.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanou.andclydeCo.AndClyde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,15 +398,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JVMQ9FHDFX;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = A42TUUCYD6;
 				INFOPLIST_FILE = AndClyde/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andclydeCo.AndClyde;
+				MARKETING_VERSION = 0.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ivanou.andclyde.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "AdHoc Ivanou";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -341,6 +439,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A21D2762657F05D00E11363 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+		3AD2517C2656E3E400A9A67D /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AddedLayer/multipeer-session.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A21D2772657F05D00E11363 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A21D2762657F05D00E11363 /* RemoteSwiftPackageReference */;
+			productName = FocusEntity;
+		};
+		3AD2517D2656E3E400A9A67D /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AD2517C2656E3E400A9A67D /* RemoteSwiftPackageReference */;
+			productName = MultipeerSession;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3AD2515B2656D7F200A9A67D /* Project object */;
 }
