@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A21D2732657DA8E00E11363 /* shell.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2722657DA8E00E11363 /* shell.usdz */; };
-		3A21D2782657F05D00E11363 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3A21D2772657F05D00E11363 /* SwiftPackageProductDependency */; };
+		3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 3A21D2772657F05D00E11363 /* FocusEntity */; };
 		3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2792657F0A300E11363 /* FocusARView.swift */; };
 		3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */; };
 		3A21D27E26583A3D00E11363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27D26583A3D00E11363 /* Model.swift */; };
@@ -25,7 +25,6 @@
 		3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516C2656D7F200A9A67D /* Main.storyboard */; };
 		3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516F2656D7F500A9A67D /* Assets.xcassets */; };
 		3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */; };
-		3AD2517E2656E3E400A9A67D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD2517D2656E3E400A9A67D /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A21D2782657F05D00E11363 /* BuildFile in Frameworks */,
-				3AD2517E2656E3E400A9A67D /* BuildFile in Frameworks */,
+				3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +99,6 @@
 			children = (
 				3AD251652656D7F200A9A67D /* AndClyde */,
 				3AD251642656D7F200A9A67D /* Products */,
-				E08C9752CFA89C9D5CF65809 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,13 +126,6 @@
 			path = AndClyde;
 			sourceTree = "<group>";
 		};
-		E08C9752CFA89C9D5CF65809 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,8 +143,7 @@
 			);
 			name = AndClyde;
 			packageProductDependencies = (
-				3AD2517D2656E3E400A9A67D /* SwiftPackageProductDependency */,
-				3A21D2772657F05D00E11363 /* SwiftPackageProductDependency */,
+				3A21D2772657F05D00E11363 /* FocusEntity */,
 			);
 			productName = AndClyde;
 			productReference = 3AD251632656D7F200A9A67D /* AndClyde.app */;
@@ -184,8 +173,7 @@
 			);
 			mainGroup = 3AD2515A2656D7F200A9A67D;
 			packageReferences = (
-				3AD2517C2656E3E400A9A67D /* RemoteSwiftPackageReference */,
-				3A21D2762657F05D00E11363 /* RemoteSwiftPackageReference */,
+				3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 3AD251642656D7F200A9A67D /* Products */;
 			projectDirPath = "";
@@ -375,19 +363,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = A42TUUCYD6;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R89NDG9GL5;
 				INFOPLIST_FILE = AndClyde/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ivanou.andclydeCo.AndClyde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waveneuro.andclide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Remedy Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -399,19 +390,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = A42TUUCYD6;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R89NDG9GL5;
 				INFOPLIST_FILE = AndClyde/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ivanou.andclyde.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waveneuro.andclide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdHoc Ivanou";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Remedy Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,7 +435,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A21D2762657F05D00E11363 /* RemoteSwiftPackageReference */ = {
+		3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
 			requirement = {
@@ -449,26 +443,13 @@
 				minimumVersion = 2.2.3;
 			};
 		};
-		3AD2517C2656E3E400A9A67D /* RemoteSwiftPackageReference */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AddedLayer/multipeer-session.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A21D2772657F05D00E11363 /* SwiftPackageProductDependency */ = {
+		3A21D2772657F05D00E11363 /* FocusEntity */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A21D2762657F05D00E11363 /* RemoteSwiftPackageReference */;
+			package = 3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */;
 			productName = FocusEntity;
-		};
-		3AD2517D2656E3E400A9A67D /* SwiftPackageProductDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3AD2517C2656E3E400A9A67D /* RemoteSwiftPackageReference */;
-			productName = MultipeerSession;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

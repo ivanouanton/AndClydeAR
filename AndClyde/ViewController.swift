@@ -9,13 +9,11 @@ import UIKit
 import ARKit
 import ReplayKit
 import RealityKit
-import MultipeerSession
 
 class ViewController: UIViewController {
     
     @IBOutlet var arView: FocusARView!
     
-    var multipeerSession: MultipeerSession?
     var sessionIDObservation: NSKeyValueObservation?
     
     let recorder = RPScreenRecorder.shared()
@@ -166,9 +164,7 @@ class ViewController: UIViewController {
         setupARView()
         
         setupControlHandler()
-        
-        setupMultipeerSession()
-        
+                
         arView.session.delegate = self
     }
     
@@ -209,26 +205,6 @@ class ViewController: UIViewController {
             recordStack.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -24),
             recordStack.centerYAnchor.constraint(equalTo: logoLabel.centerYAnchor)
         ])
-    }
-    
-    private func setupMultipeerSession() {
-        
-        // Use key-value observation to monitor your ARSession's ids
-        sessionIDObservation = observe(\.arView.session.identifier, options: [.new], changeHandler: { object, change in
-            print("SessionID changed to: \(change.newValue!)")
-            
-            // Tell all other peers about your ARSession's changed ID, so
-            // that thay can keep track of which ARAnchors are yours
-            guard let multipeerSession = self.multipeerSession else { return }
-            self.sendARSessionIDTo(peers: multipeerSession.connectedPeers)
-        })
-        
-        // Start looking for the other players via MultiPeerConnectivity
-        multipeerSession = MultipeerSession(serviceName: "multiuser-ar",
-                                                receivedDataHandler: self.receivedData,
-                                                peerJoinedHandler: self.peerJoined,
-                                                peerLeftHandler: self.peerLeft,
-                                                peerDiscoveredHandler: self.peerDiscovered)
     }
     
     func placeObject(named entityName: String, for anchor: ARAnchor) {
