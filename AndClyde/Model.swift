@@ -38,13 +38,10 @@ struct Models {
     var all: [Model] = []
     
     init() {
-        let gold = Model("stone", scaleCompensation: 0.3)
-        let shell = Model("shell", scaleCompensation: 0.3)
-        let wood = Model("wood", scaleCompensation: 0.3)
-        let conch = Model("conch", scaleCompensation: 0.3)
-        let wood_long = Model("wood_long", scaleCompensation: 0.3)
+        let earth   = Model("earth", scaleCompensation: 0.3)
+        let lamp    = Model("lamp", scaleCompensation: 0.3)
+        let conch   = Model("conch", scaleCompensation: 0.3)
 
-        self.all += [gold, shell, wood, conch, wood_long]
-
+        self.all += [earth, lamp, conch]
     }
 }

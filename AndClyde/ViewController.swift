@@ -343,6 +343,7 @@ class ViewController: UIViewController {
         modelPlaceControlStack.isHidden = isEnabled
     }
 }
+
 extension ViewController: PreviewCollectionViewDelegate {
     func collectionView(_ collectionView: PreviewCollectionView, didSelect item: Model) {
         collectionIsEnabled(false)

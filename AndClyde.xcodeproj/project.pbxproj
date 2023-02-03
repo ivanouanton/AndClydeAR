@@ -7,38 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A21D2732657DA8E00E11363 /* shell.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D2722657DA8E00E11363 /* shell.usdz */; };
-		3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 3A21D2772657F05D00E11363 /* FocusEntity */; };
 		3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2792657F0A300E11363 /* FocusARView.swift */; };
-		3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */; };
 		3A21D27E26583A3D00E11363 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D27D26583A3D00E11363 /* Model.swift */; };
-		3A21D28226583AD000E11363 /* stone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D27F26583ACF00E11363 /* stone.usdz */; };
-		3A21D28326583AD000E11363 /* wood.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28026583AD000E11363 /* wood.usdz */; };
 		3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A21D28A26586E6D00E11363 /* Berlindah.otf */; };
 		3A21D2932658791C00E11363 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */; };
 		3A21D2942658791C00E11363 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2922658791C00E11363 /* PreviewCollectionView.swift */; };
 		3A8DB2952662178D002FF484 /* conch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2912662178B002FF484 /* conch.usdz */; };
-		3A8DB2972662178D002FF484 /* wood_long.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2932662178D002FF484 /* wood_long.usdz */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
 		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
 		3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516C2656D7F200A9A67D /* Main.storyboard */; };
 		3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516F2656D7F500A9A67D /* Assets.xcassets */; };
 		3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */; };
+		F3368EF1298C093400AAE798 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = F3368EF0298C093400AAE798 /* FocusEntity */; };
+		F3500898298D1AF600C1C05D /* lamp.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F3500897298D1AF600C1C05D /* lamp.usdz */; };
+		F350089A298D329400C1C05D /* earth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F3500899298D329400C1C05D /* earth.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A21D2722657DA8E00E11363 /* shell.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shell.usdz; sourceTree = "<group>"; };
 		3A21D2792657F0A300E11363 /* FocusARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusARView.swift; sourceTree = "<group>"; };
-		3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Multipeer.swift"; sourceTree = "<group>"; };
 		3A21D27D26583A3D00E11363 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		3A21D27F26583ACF00E11363 /* stone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = stone.usdz; sourceTree = "<group>"; };
-		3A21D28026583AD000E11363 /* wood.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood.usdz; sourceTree = "<group>"; };
 		3A21D28A26586E6D00E11363 /* Berlindah.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Berlindah.otf; sourceTree = "<group>"; };
 		3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		3A21D2922658791C00E11363 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
 		3A8DB2912662178B002FF484 /* conch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = conch.usdz; sourceTree = "<group>"; };
-		3A8DB2932662178D002FF484 /* wood_long.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wood_long.usdz; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
@@ -47,6 +39,8 @@
 		3AD2516F2656D7F500A9A67D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD251722656D7F500A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD251742656D7F500A9A67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3500897298D1AF600C1C05D /* lamp.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = lamp.usdz; sourceTree = "<group>"; };
+		F3500899298D329400C1C05D /* earth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = earth.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A21D2782657F05D00E11363 /* FocusEntity in Frameworks */,
+				F3368EF1298C093400AAE798 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,11 +58,9 @@
 		3A21D28626583AEF00E11363 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
-				3A21D27F26583ACF00E11363 /* stone.usdz */,
-				3A21D28026583AD000E11363 /* wood.usdz */,
-				3A21D2722657DA8E00E11363 /* shell.usdz */,
+				F3500899298D329400C1C05D /* earth.usdz */,
+				F3500897298D1AF600C1C05D /* lamp.usdz */,
 				3A8DB2912662178B002FF484 /* conch.usdz */,
-				3A8DB2932662178D002FF484 /* wood_long.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -113,10 +105,9 @@
 		3AD251652656D7F200A9A67D /* AndClyde */ = {
 			isa = PBXGroup;
 			children = (
+				3AD251742656D7F500A9A67D /* Info.plist */,
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
 				3AD251682656D7F200A9A67D /* ViewController.swift */,
-				3A21D27B265836D200E11363 /* ViewController+Multipeer.swift */,
-				3AD251742656D7F500A9A67D /* Info.plist */,
 				3A21D2792657F0A300E11363 /* FocusARView.swift */,
 				3A21D27D26583A3D00E11363 /* Model.swift */,
 				3A21D2952658792500E11363 /* CustomCollectionView */,
@@ -143,7 +134,7 @@
 			);
 			name = AndClyde;
 			packageProductDependencies = (
-				3A21D2772657F05D00E11363 /* FocusEntity */,
+				F3368EF0298C093400AAE798 /* FocusEntity */,
 			);
 			productName = AndClyde;
 			productReference = 3AD251632656D7F200A9A67D /* AndClyde.app */;
@@ -173,7 +164,7 @@
 			);
 			mainGroup = 3AD2515A2656D7F200A9A67D;
 			packageReferences = (
-				3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+				F3368EEF298C093400AAE798 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 3AD251642656D7F200A9A67D /* Products */;
 			projectDirPath = "";
@@ -189,13 +180,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A21D2732657DA8E00E11363 /* shell.usdz in Resources */,
 				3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */,
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
-				3A21D28326583AD000E11363 /* wood.usdz in Resources */,
-				3A8DB2972662178D002FF484 /* wood_long.usdz in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
-				3A21D28226583AD000E11363 /* stone.usdz in Resources */,
+				F350089A298D329400C1C05D /* earth.usdz in Resources */,
+				F3500898298D1AF600C1C05D /* lamp.usdz in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
 				3A8DB2952662178D002FF484 /* conch.usdz in Resources */,
 			);
@@ -211,7 +200,6 @@
 				3AD251692656D7F200A9A67D /* ViewController.swift in Sources */,
 				3A21D2932658791C00E11363 /* ZoomAndSnapFlowLayout.swift in Sources */,
 				3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */,
-				3A21D27C265836D200E11363 /* ViewController+Multipeer.swift in Sources */,
 				3A21D27E26583A3D00E11363 /* Model.swift in Sources */,
 				3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */,
 				3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */,
@@ -379,6 +367,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Remedy Development";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -406,6 +397,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "AdHoc Ivanou";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Remedy Development";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,20 +429,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+		F3368EEF298C093400AAE798 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.3;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A21D2772657F05D00E11363 /* FocusEntity */ = {
+		F3368EF0298C093400AAE798 /* FocusEntity */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A21D2762657F05D00E11363 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			package = F3368EEF298C093400AAE798 /* XCRemoteSwiftPackageReference "FocusEntity" */;
 			productName = FocusEntity;
 		};
 /* End XCSwiftPackageProductDependency section */
