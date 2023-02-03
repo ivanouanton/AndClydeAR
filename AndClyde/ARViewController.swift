@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ARViewController.swift
 //  AndClyde
 //
 //  Created by Anton Ivanov on 20.05.21.
@@ -10,9 +10,13 @@ import ARKit
 import ReplayKit
 import RealityKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet var arView: FocusARView!
+class ARViewController: UIViewController {
+        
+    lazy var arView: FocusARView = {
+        let view = FocusARView(frame: view.frame)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     var sessionIDObservation: NSKeyValueObservation?
     
@@ -165,6 +169,15 @@ class ViewController: UIViewController {
         
         setupControlHandler()
                 
+        view.addSubview(arView)
+        
+        NSLayoutConstraint.activate([
+            arView.topAnchor.constraint(equalTo: view.topAnchor),
+            arView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            arView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            arView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
         arView.session.delegate = self
     }
     
@@ -344,7 +357,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: PreviewCollectionViewDelegate {
+extension ARViewController: PreviewCollectionViewDelegate {
     func collectionView(_ collectionView: PreviewCollectionView, didSelect item: Model) {
         collectionIsEnabled(false)
 
@@ -358,7 +371,7 @@ extension ViewController: PreviewCollectionViewDelegate {
     }
 }
 
-extension ViewController: ARSessionDelegate {
+extension ARViewController: ARSessionDelegate {
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
             if let anchorname = anchor.name {
@@ -373,7 +386,7 @@ extension ViewController: ARSessionDelegate {
     }
 }
 
-extension ViewController: RPPreviewViewControllerDelegate {
+extension ARViewController: RPPreviewViewControllerDelegate {
     func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
         dismiss(animated: true, completion: nil)
     }

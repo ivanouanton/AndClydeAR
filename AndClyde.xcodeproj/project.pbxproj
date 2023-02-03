@@ -14,14 +14,15 @@
 		3A21D2942658791C00E11363 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21D2922658791C00E11363 /* PreviewCollectionView.swift */; };
 		3A8DB2952662178D002FF484 /* conch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB2912662178B002FF484 /* conch.usdz */; };
 		3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251662656D7F200A9A67D /* AppDelegate.swift */; };
-		3AD251692656D7F200A9A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ViewController.swift */; };
+		3AD251692656D7F200A9A67D /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD251682656D7F200A9A67D /* ARViewController.swift */; };
 		3AD2516B2656D7F200A9A67D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2516A2656D7F200A9A67D /* Experience.rcproject */; };
 		3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516C2656D7F200A9A67D /* Main.storyboard */; };
 		3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2516F2656D7F500A9A67D /* Assets.xcassets */; };
 		3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD251712656D7F500A9A67D /* LaunchScreen.storyboard */; };
 		F3368EF1298C093400AAE798 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = F3368EF0298C093400AAE798 /* FocusEntity */; };
 		F3500898298D1AF600C1C05D /* lamp.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F3500897298D1AF600C1C05D /* lamp.usdz */; };
-		F350089A298D329400C1C05D /* earth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F3500899298D329400C1C05D /* earth.usdz */; };
+		F350089E298D772C00C1C05D /* shell.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F350089D298D772C00C1C05D /* shell.usdz */; };
+		F35008A0298D7A2600C1C05D /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350089F298D7A2600C1C05D /* LoadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,14 +34,15 @@
 		3A8DB2912662178B002FF484 /* conch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = conch.usdz; sourceTree = "<group>"; };
 		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AD251682656D7F200A9A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
+		3AD251682656D7F200A9A67D /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		3AD2516A2656D7F200A9A67D /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		3AD2516D2656D7F200A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AD2516F2656D7F500A9A67D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD251722656D7F500A9A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD251742656D7F500A9A67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3500897298D1AF600C1C05D /* lamp.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = lamp.usdz; sourceTree = "<group>"; };
-		F3500899298D329400C1C05D /* earth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = earth.usdz; sourceTree = "<group>"; };
+		F350089D298D772C00C1C05D /* shell.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shell.usdz; sourceTree = "<group>"; };
+		F350089F298D7A2600C1C05D /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 		3A21D28626583AEF00E11363 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
-				F3500899298D329400C1C05D /* earth.usdz */,
+				F350089D298D772C00C1C05D /* shell.usdz */,
 				F3500897298D1AF600C1C05D /* lamp.usdz */,
 				3A8DB2912662178B002FF484 /* conch.usdz */,
 			);
@@ -107,7 +109,8 @@
 			children = (
 				3AD251742656D7F500A9A67D /* Info.plist */,
 				3AD251662656D7F200A9A67D /* AppDelegate.swift */,
-				3AD251682656D7F200A9A67D /* ViewController.swift */,
+				3AD251682656D7F200A9A67D /* ARViewController.swift */,
+				F350089F298D7A2600C1C05D /* LoadViewController.swift */,
 				3A21D2792657F0A300E11363 /* FocusARView.swift */,
 				3A21D27D26583A3D00E11363 /* Model.swift */,
 				3A21D2952658792500E11363 /* CustomCollectionView */,
@@ -182,8 +185,8 @@
 			files = (
 				3A21D28B26586E6D00E11363 /* Berlindah.otf in Resources */,
 				3AD251732656D7F500A9A67D /* LaunchScreen.storyboard in Resources */,
+				F350089E298D772C00C1C05D /* shell.usdz in Resources */,
 				3AD251702656D7F500A9A67D /* Assets.xcassets in Resources */,
-				F350089A298D329400C1C05D /* earth.usdz in Resources */,
 				F3500898298D1AF600C1C05D /* lamp.usdz in Resources */,
 				3AD2516E2656D7F200A9A67D /* Main.storyboard in Resources */,
 				3A8DB2952662178D002FF484 /* conch.usdz in Resources */,
@@ -197,8 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD251692656D7F200A9A67D /* ViewController.swift in Sources */,
+				3AD251692656D7F200A9A67D /* ARViewController.swift in Sources */,
 				3A21D2932658791C00E11363 /* ZoomAndSnapFlowLayout.swift in Sources */,
+				F35008A0298D7A2600C1C05D /* LoadViewController.swift in Sources */,
 				3AD251672656D7F200A9A67D /* AppDelegate.swift in Sources */,
 				3A21D27E26583A3D00E11363 /* Model.swift in Sources */,
 				3A21D27A2657F0A300E11363 /* FocusARView.swift in Sources */,
