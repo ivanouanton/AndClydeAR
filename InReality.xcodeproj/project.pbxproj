@@ -32,7 +32,7 @@
 		3A21D2912658791C00E11363 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		3A21D2922658791C00E11363 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
 		3A8DB2912662178B002FF484 /* conch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = conch.usdz; sourceTree = "<group>"; };
-		3AD251632656D7F200A9A67D /* AndClyde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndClyde.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD251632656D7F200A9A67D /* InReality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InReality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD251662656D7F200A9A67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD251682656D7F200A9A67D /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		3AD2516A2656D7F200A9A67D /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		3AD251642656D7F200A9A67D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AD251632656D7F200A9A67D /* AndClyde.app */,
+				3AD251632656D7F200A9A67D /* InReality.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,9 +123,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3AD251622656D7F200A9A67D /* AndClyde */ = {
+		3AD251622656D7F200A9A67D /* InReality */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AD251772656D7F500A9A67D /* Build configuration list for PBXNativeTarget "AndClyde" */;
+			buildConfigurationList = 3AD251772656D7F500A9A67D /* Build configuration list for PBXNativeTarget "InReality" */;
 			buildPhases = (
 				3AD2515F2656D7F200A9A67D /* Sources */,
 				3AD251602656D7F200A9A67D /* Frameworks */,
@@ -135,12 +135,12 @@
 			);
 			dependencies = (
 			);
-			name = AndClyde;
+			name = InReality;
 			packageProductDependencies = (
 				F3368EF0298C093400AAE798 /* FocusEntity */,
 			);
 			productName = AndClyde;
-			productReference = 3AD251632656D7F200A9A67D /* AndClyde.app */;
+			productReference = 3AD251632656D7F200A9A67D /* InReality.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -157,7 +157,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3AD2515E2656D7F200A9A67D /* Build configuration list for PBXProject "AndClyde" */;
+			buildConfigurationList = 3AD2515E2656D7F200A9A67D /* Build configuration list for PBXProject "InReality" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -173,7 +173,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AD251622656D7F200A9A67D /* AndClyde */,
+				3AD251622656D7F200A9A67D /* InReality */,
 			);
 		};
 /* End PBXProject section */
@@ -412,7 +412,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3AD2515E2656D7F200A9A67D /* Build configuration list for PBXProject "AndClyde" */ = {
+		3AD2515E2656D7F200A9A67D /* Build configuration list for PBXProject "InReality" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AD251752656D7F500A9A67D /* Debug */,
@@ -421,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AD251772656D7F500A9A67D /* Build configuration list for PBXNativeTarget "AndClyde" */ = {
+		3AD251772656D7F500A9A67D /* Build configuration list for PBXNativeTarget "InReality" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AD251782656D7F500A9A67D /* Debug */,
