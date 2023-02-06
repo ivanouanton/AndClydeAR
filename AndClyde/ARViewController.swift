@@ -25,8 +25,6 @@ class ARViewController: UIViewController {
         didSet {
             modelsCollection.isHidden = isRecording
             screenshot.isHidden = isRecording
-            occlusionBtn.isHidden = isRecording
-            connectionStatusView.isHidden = isRecording
             screenRecordBtn.tintColor = isRecording ? UIColor.systemRed.withAlphaComponent(0.5) : UIColor.white.withAlphaComponent(0.5)
         }
     }
@@ -41,27 +39,6 @@ class ARViewController: UIViewController {
         let view = PreviewCollectionView()
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var logoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "&Clyde"
-        label.textColor = UIColor(named: "black")
-        label.font = UIFont(name: "Berlindah", size: 50)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var connectionStatusView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 4
-        view.layer.backgroundColor = UIColor.systemRed.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 8),
-            view.widthAnchor.constraint(equalToConstant: 8)
-        ])
         return view
     }()
     
@@ -115,7 +92,7 @@ class ARViewController: UIViewController {
     private lazy var screenshot: UIButton = {
         let button = UIButton()
         
-        button.setImage(UIImage(systemName: "camera.circle"), for: .normal)
+        button.setImage(UIImage(named: "camera-photo"), for: .normal)
         button.tintColor = UIColor.white.withAlphaComponent(0.5)
         let config = UIImage.SymbolConfiguration(pointSize: 30)
         button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
@@ -127,7 +104,7 @@ class ARViewController: UIViewController {
     private lazy var screenRecordBtn: UIButton = {
         let button = UIButton()
         
-        button.setImage(UIImage(systemName: "record.circle"), for: .normal)
+        button.setImage(UIImage(named: "camera-video"), for: .normal)
         button.tintColor = UIColor.white.withAlphaComponent(0.5)
         let config = UIImage.SymbolConfiguration(pointSize: 30)
         button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
@@ -139,27 +116,13 @@ class ARViewController: UIViewController {
     private lazy var recordStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.distribution = .fill
         stack.alignment = .center
         stack.spacing = 20
-        stack.addArrangedSubview(connectionStatusView)
-        stack.addArrangedSubview(screenRecordBtn)
         stack.addArrangedSubview(screenshot)
-        stack.addArrangedSubview(occlusionBtn)
+        stack.addArrangedSubview(screenRecordBtn)
         return stack
-    }()
-    
-    private lazy var occlusionBtn: UIButton = {
-        let button = UIButton()
-        
-        button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        button.tintColor = UIColor.white.withAlphaComponent(0.5)
-        let config = UIImage.SymbolConfiguration(pointSize: 30)
-        button.setPreferredSymbolConfiguration(config, forImageIn: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(setupOcclusion), for: .touchUpInside)
-        return button
     }()
     
     override func viewDidAppear(_ animated: Bool) {
@@ -198,7 +161,6 @@ class ARViewController: UIViewController {
     func setupControlHandler() {
         arView.addSubview(modelsCollection)
         arView.addSubview(modelPlaceControlStack)
-        arView.addSubview(logoLabel)
         arView.addSubview(recordStack)
 
         modelsCollection.items = Models().all
@@ -212,11 +174,8 @@ class ARViewController: UIViewController {
             modelPlaceControlStack.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             modelPlaceControlStack.bottomAnchor.constraint(equalTo: arView.bottomAnchor, constant: -24),
             
-            logoLabel.topAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.topAnchor, constant: 8),
-            logoLabel.leadingAnchor.constraint(equalTo: arView.leadingAnchor, constant: 24),
-            
-            recordStack.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -24),
-            recordStack.centerYAnchor.constraint(equalTo: logoLabel.centerYAnchor)
+            recordStack.trailingAnchor.constraint(equalTo: arView.trailingAnchor, constant: -16),
+            recordStack.topAnchor.constraint(equalTo: arView.safeAreaLayoutGuide.topAnchor, constant: 16)
         ])
     }
     
@@ -323,51 +282,10 @@ class ARViewController: UIViewController {
         }
     }
     
-    @objc
-    func setupOcclusion() {
-        guard ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth),
-              ARWorldTrackingConfiguration.supportsSceneReconstruction(.meshWithClassification),
-              let configuration = arView.session.configuration as? ARWorldTrackingConfiguration
-        else {
-            let alert = UIAlertController(title: "Error", message: "Scene reconstruction requires a device with a LiDAR Scanner.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        if configuration.frameSemantics.contains(.personSegmentation) {
-            configuration.frameSemantics.remove(.personSegmentation)
-        } else {
-            configuration.frameSemantics.insert(.personSegmentation)
-        }
-        
-        if arView.environment.sceneUnderstanding.options.contains(.occlusion) {
-            arView.environment.sceneUnderstanding.options.remove(.occlusion)
-            occlusionBtn.tintColor = UIColor.white.withAlphaComponent(0.5)
-        } else {
-            arView.environment.sceneUnderstanding.options.insert(.occlusion)
-            occlusionBtn.tintColor = .systemGreen
-        }
-    }
-    
     func collectionIsEnabled(_ isEnabled: Bool) {
         arView.focusEntity?.isEnabled = !isEnabled
         modelsCollection.isHidden = !isEnabled
         modelPlaceControlStack.isHidden = isEnabled
-    }
-}
-
-extension ARViewController: PreviewCollectionViewDelegate {
-    func collectionView(_ collectionView: PreviewCollectionView, didSelect item: Model) {
-        collectionIsEnabled(false)
-
-        selectedModel = item
-    }
-    
-    func collectionView( _ collectionView: PreviewCollectionView, didSelectStore item: Model) {
-        if let url = URL(string: "https://www.andclyde.com") {
-            UIApplication.shared.open(url)
-        }
     }
 }
 
@@ -377,12 +295,15 @@ extension ARViewController: ARSessionDelegate {
             if let anchorname = anchor.name {
                 placeObject(named: anchorname, for: anchor)
             }
-            
-            if anchor is ARParticipantAnchor {
-                print("Successfully connected to another user")
-                connectionStatusView.layer.backgroundColor = UIColor.systemGreen.cgColor
-            }
         }
+    }
+}
+
+extension ARViewController: PreviewCollectionViewDelegate {
+    func collectionView(_ collectionView: PreviewCollectionView, didSelect item: Model) {
+        collectionIsEnabled(false)
+
+        selectedModel = item
     }
 }
 
